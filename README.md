@@ -1,7 +1,18 @@
 # Todo Challenge
 
-* Deadline: submit completed pull request by 9am on Monday
-* You may use whatever level of JavaScript you feel comfortable with - pure JS, jQuery, Angular, or whatever weird and wonderful framework you want to try. Extra points for DogeScript
+Technologies
+-----------
+Front-end:
+AngularJS
+
+Testing:
+Karma / Jasmine / PhantomJS
+
+Package managers:
+NPM
+Bower
+
+
 
 Steps
 -------
