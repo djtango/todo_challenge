@@ -7,19 +7,24 @@ describe('TodoController', function() {
     ctrl = $controller('TodoController');
   }));
 
-  var firstTask = [
-    {
-      "name": "task1",
-      "body": "make more tests"
-    }
-  ];
-
   it('initialises with an empty task bar', function() {
-    expect(ctrl.taskName).toBeUndefined();
-    expect(ctrl.taskBody).toBeUndefined();
+    expect(ctrl.newTaskName).toBeUndefined();
+    expect(ctrl.newTaskBody).toBeUndefined();
   });
 
-  it('displays tasks details from the session', function() {
-    expect(ctrl.taskList).toEqual(firstTask);
+  it('appends a new task onto the existing task list', function() {
+
+    var countTasks = ctrl.taskList.length;
+    var secondTask = {
+      "name": "task2",
+      "body": "write your code to pass your tests"
+    };
+    ctrl.newTaskName = "task2";
+    ctrl.newTaskBody = "write your code to pass your tests";
+
+    ctrl.saveTask();
+    expect(ctrl.taskList).toEqual([secondTask]);
+    var diffCounts = ctrl.taskList.length - countTasks;
+    expect(diffCounts).toEqual(1);
   });
 });
